@@ -17,6 +17,7 @@ import github from "./github.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import web from "./web.svg";
+import fullstack from "./fullstack.svg";
 import backend from "./backend.svg";
 import network from "./network.svg";
 import creator from "./creator.svg";
@@ -48,6 +49,7 @@ export {
   linkedin,
   twitter,
   web,
+  fullstack,
   backend,
   network,
   creator,

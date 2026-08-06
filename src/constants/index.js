@@ -1,5 +1,6 @@
 import {
   web,
+  fullstack,
   backend,
   network,
   creator,
@@ -58,6 +59,11 @@ export const socials = [
 ];
 
 const services = [
+  {
+    title: "Full Stack Developer",
+    description: "Shipping complete products end-to-end, from database to UI.",
+    icon: fullstack,
+  },
   {
     title: "Web Developer",
     description: "Building responsive, full-stack apps with React and modern frameworks.",
