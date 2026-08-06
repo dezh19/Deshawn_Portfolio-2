@@ -58,10 +58,26 @@ export const socials = [
 ];
 
 const services = [
-  { title: "Web Developer", icon: web },
-  { title: "Backend Developer", icon: backend },
-  { title: "Systems & Network Support", icon: network },
-  { title: "Graphic Designer", icon: creator },
+  {
+    title: "Web Developer",
+    description: "Building responsive, full-stack apps with React and modern frameworks.",
+    icon: web,
+  },
+  {
+    title: "Backend Developer",
+    description: "Designing APIs and services with Node.js, Express, and SQL/NoSQL databases.",
+    icon: backend,
+  },
+  {
+    title: "Systems & Network Support",
+    description: "Hands-on experience keeping infrastructure and networks running reliably.",
+    icon: network,
+  },
+  {
+    title: "Graphic Designer",
+    description: "Crafting clean visual interfaces with an eye for layout and detail.",
+    icon: creator,
+  },
 ];
 
 const technologies = [
