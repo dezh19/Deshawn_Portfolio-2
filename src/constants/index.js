@@ -11,8 +11,10 @@ import {
   tailwind,
   nodejs,
   mongodb,
-  git,
-  figma,
+  nextjs,
+  postgresql,
+  expressjs,
+  threejs,
   linden,
   gphc,
   fiber,
@@ -25,6 +27,18 @@ import {
   linkedin,
   twitter,
 } from "../assets";
+import {
+  SiGit,
+  SiGithub as SiGithubIcon,
+  SiFigma as SiFigmaIcon,
+  SiSass as SiSassIcon,
+  SiVite as SiViteIcon,
+  SiNetlify,
+  SiPostman,
+  SiVercel,
+  SiBlender,
+} from "react-icons/si";
+import { DiVisualstudio, DiTerminal, DiPhotoshop } from "react-icons/di";
 
 export const navLinks = [
   { id: "about", title: "About" },
@@ -56,11 +70,30 @@ const technologies = [
   { name: "JavaScript", icon: javascript },
   { name: "TypeScript", icon: typescript },
   { name: "React JS", icon: reactjs },
+  { name: "Next.js", icon: nextjs },
   { name: "Tailwind CSS", icon: tailwind },
+  { name: "Three.js", icon: threejs },
   { name: "Node JS", icon: nodejs },
+  { name: "Express", icon: expressjs },
   { name: "MongoDB", icon: mongodb },
-  { name: "git", icon: git },
-  { name: "figma", icon: figma },
+  { name: "PostgreSQL", icon: postgresql },
+];
+
+// Kept as flat icons (not 3D balls) to stay under the browser's simultaneous
+// WebGL-context limit — each tech ball mounts its own <Canvas>.
+const tools = [
+  { name: "VS Code", Icon: DiVisualstudio },
+  { name: "Git", Icon: SiGit },
+  { name: "GitHub", Icon: SiGithubIcon },
+  { name: "Figma", Icon: SiFigmaIcon },
+  { name: "Sass", Icon: SiSassIcon },
+  { name: "Vite", Icon: SiViteIcon },
+  { name: "Terminal", Icon: DiTerminal },
+  { name: "Netlify", Icon: SiNetlify },
+  { name: "Vercel", Icon: SiVercel },
+  { name: "Postman", Icon: SiPostman },
+  { name: "Blender", Icon: SiBlender },
+  { name: "Photoshop", Icon: DiPhotoshop },
 ];
 
 const experiences = [
@@ -230,4 +263,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, projects, github };
+export { services, technologies, tools, experiences, projects, github };

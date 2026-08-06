@@ -8,6 +8,10 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
+import nextjs from "./tech/nextjs.svg";
+import postgresql from "./tech/postgresql.svg";
+import expressjs from "./tech/expressjs.svg";
+import threejs from "./tech/threejs.svg";
 
 import github from "./github.svg";
 import linkedin from "./linkedin.svg";
@@ -36,6 +40,10 @@ export {
   reactjs,
   tailwind,
   typescript,
+  nextjs,
+  postgresql,
+  expressjs,
+  threejs,
   github,
   linkedin,
   twitter,
