@@ -59,6 +59,21 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
 .canvas-loader {
   font-size: 10px;
   width: 1em;

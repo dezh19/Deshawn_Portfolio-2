@@ -26,6 +26,7 @@ const Hero = () => {
       </div>
 
       <div className="absolute inset-0 z-0">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] max-w-[90vw] max-h-[90vw] rounded-full bg-[#915eff]/30 blur-[120px] animate-pulse-glow" />
         <ComputersCanvas />
       </div>
 
