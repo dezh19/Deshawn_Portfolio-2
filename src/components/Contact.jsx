@@ -1,14 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { lazy, Suspense, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useInView } from "framer-motion";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { socials } from "../constants";
 
+const EarthCanvas = lazy(() => import("./canvas/Earth"));
+
 const Contact = () => {
   const formRef = useRef();
+  const earthRef = useRef(null);
+  const earthInView = useInView(earthRef, { once: true, margin: "200px" });
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
@@ -141,8 +145,18 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
-        <EarthCanvas />
+      <div ref={earthRef} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
+        {earthInView && (
+          <Suspense
+            fallback={
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="canvas-loader" />
+              </div>
+            }
+          >
+            <EarthCanvas />
+          </Suspense>
+        )}
       </div>
     </div>
   );

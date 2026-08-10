@@ -6,4 +6,3 @@ export { default as Experience } from "./Experience";
 export { default as Works } from "./Works";
 export { default as Contact } from "./Contact";
 export { default as CanvasLoader } from "./Loader";
-export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from "./canvas";

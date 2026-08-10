@@ -1,17 +1,38 @@
-import React from "react";
+import React, { lazy, Suspense, useRef } from "react";
+import { useInView } from "framer-motion";
 
-import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies, tools } from "../constants";
+
+const BallCanvas = lazy(() => import("./canvas/Ball"));
+
+const TechBall = ({ icon }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "200px" });
+
+  return (
+    <div className="w-28 h-28" ref={ref}>
+      {inView && (
+        <Suspense
+          fallback={
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="canvas-loader" />
+            </div>
+          }
+        >
+          <BallCanvas icon={icon} />
+        </Suspense>
+      )}
+    </div>
+  );
+};
 
 const Tech = () => {
   return (
     <>
       <div className="flex flex-row flex-wrap justify-center gap-10">
         {technologies.map((technology) => (
-          <div className="w-28 h-28" key={technology.name}>
-            <BallCanvas icon={technology.icon} />
-          </div>
+          <TechBall key={technology.name} icon={technology.icon} />
         ))}
       </div>
 
