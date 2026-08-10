@@ -7,23 +7,33 @@ import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
-const ServiceCard = ({ index, title, description, icon }) => (
-  <Tilt className="xs:w-[200px] w-full">
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      whileHover={{ y: -6 }}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(145,94,255,0.35)]"
-    >
-      <div className="bg-tertiary rounded-[20px] py-6 px-6 min-h-[220px] flex flex-col items-center text-center gap-3">
-        <div className="w-12 h-12 rounded-full bg-[#915eff]/15 border border-[#915eff]/40 flex items-center justify-center">
-          <img src={icon} alt={title} className="w-6 h-6 object-contain" />
+const glowColors = ["#a2e9ff", "#66e0b6", "#a2e9ff", "#66e0b6", "#a2e9ff"];
+
+const ServiceCard = ({ index, title, description, icon }) => {
+  const glow = glowColors[index % glowColors.length];
+
+  return (
+    <Tilt className="w-full">
+      <motion.div
+        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+        whileHover={{ y: -6 }}
+        style={{ border: `1px solid ${glow}`, boxShadow: `0 0 15px 0 ${glow}55` }}
+        className="w-full h-full rounded-[16px] sm:rounded-[24px] transition-shadow duration-300"
+      >
+        <div className="bg-tertiary rounded-[15px] sm:rounded-[23px] py-4 px-2 sm:py-8 sm:px-6 h-full min-h-[180px] sm:min-h-[260px] flex flex-col items-center justify-end text-center gap-2 sm:gap-4">
+          <div
+            className="w-8 h-8 sm:w-14 sm:h-14 rounded-full bg-[#915eff]/15 flex items-center justify-center"
+            style={{ border: `1px solid ${glow}88` }}
+          >
+            <img src={icon} alt={title} className="w-4 h-4 sm:w-7 sm:h-7 object-contain" />
+          </div>
+          <h3 className="text-white text-[11px] sm:text-[18px] font-bold leading-tight">{title}</h3>
+          <p className="hidden sm:block text-secondary text-[13px] leading-[20px]">{description}</p>
         </div>
-        <h3 className="text-white text-[17px] font-bold">{title}</h3>
-        <p className="text-secondary text-[13px] leading-[20px]">{description}</p>
-      </div>
-    </motion.div>
-  </Tilt>
-);
+      </motion.div>
+    </Tilt>
+  );
+};
 
 const About = () => {
   return (
@@ -45,7 +55,7 @@ const About = () => {
         and Next.js — alongside hands-on experience in network systems and IT support.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 grid grid-cols-5 gap-2 sm:gap-5 md:gap-7">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
