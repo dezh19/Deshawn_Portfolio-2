@@ -35,7 +35,8 @@ const ProjectCard = ({
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover rounded-2xl"
+            onClick={live_demo_link ? () => window.open(live_demo_link, "_blank") : undefined}
+            className={`w-full h-full object-cover rounded-2xl ${live_demo_link ? "cursor-pointer" : ""}`}
           />
 
           <div className="absolute inset-0 flex justify-end gap-2 m-3 card-img_hover">
@@ -50,6 +51,7 @@ const ProjectCard = ({
                 </svg>
               </div>
             )}
+            {source_code_link && (
             <div
               onClick={openSource}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
@@ -61,6 +63,7 @@ const ProjectCard = ({
                 className="w-1/2 h-1/2 object-contain"
               />
             </div>
+            )}
           </div>
 
           {is_private && (

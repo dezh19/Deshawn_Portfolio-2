@@ -264,7 +264,7 @@ const projects = [
       { name: "stripe", color: "pink-text-gradient" },
     ],
     image: ecommerenceImg,
-    source_code_link: "https://github.com/dezh19/Ecommerence",
+    live_demo_link: "https://d-ecommerence.netlify.app/",
   },
   {
     name: "Farm Flow Mobile",
@@ -276,7 +276,7 @@ const projects = [
       { name: "supabase", color: "pink-text-gradient" },
     ],
     image: farmFlowImg,
-    source_code_link: "https://github.com/dezh19/farm-flow-mobile",
+    live_demo_link: "https://farm-flow-gy.vercel.app/",
   },
   {
     name: "Smart Bin",
