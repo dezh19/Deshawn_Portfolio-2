@@ -25,9 +25,11 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+    // EmailJS IDs and public key are meant to be used in the browser (not secrets).
+    // A .env file can still override them.
+    const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID || "service_scds92b";
+    const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID || "template_kwfvbxe";
+    const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY || "cI5Wou6wTVK2EajX7";
 
     if (!serviceId || !templateId || !publicKey) {
       setLoading(false);
@@ -47,6 +49,11 @@ const Contact = () => {
           from_email: form.email,
           to_email: "Deshawnmitchellross@gmail.com",
           message: form.message,
+          // Field names used by EmailJS's default "Contact Us" template
+          name: form.name,
+          email: form.email,
+          reply_to: form.email,
+          title: "Portfolio contact form",
         },
         publicKey
       )
