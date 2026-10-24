@@ -95,3 +95,30 @@ body {
     transform: rotate(360deg);
   }
 }
+
+/* README viewer for private projects */
+.readme-body { color: #d6d3e8; font-size: 15px; line-height: 1.7; }
+.readme-body > *:first-child { margin-top: 0; }
+.readme-body h1, .readme-body h2, .readme-body h3,
+.readme-body h4, .readme-body h5, .readme-body h6 { color: #fff; font-weight: 700; line-height: 1.3; margin: 1.4em 0 0.5em; }
+.readme-body h1 { font-size: 26px; padding-bottom: 0.3em; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.readme-body h2 { font-size: 21px; padding-bottom: 0.3em; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.readme-body h3 { font-size: 18px; }
+.readme-body h4, .readme-body h5, .readme-body h6 { font-size: 16px; }
+.readme-body p { margin: 0.7em 0; }
+.readme-body a { color: #a2e9ff; text-decoration: underline; text-underline-offset: 3px; }
+.readme-body ul, .readme-body ol { margin: 0.6em 0; padding-left: 1.5em; }
+.readme-body ul { list-style: disc; }
+.readme-body ol { list-style: decimal; }
+.readme-body li { margin: 0.25em 0; }
+.readme-body li > ul, .readme-body li > ol { margin: 0.2em 0; }
+.readme-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.88em; background: rgba(255,255,255,0.08); padding: 0.15em 0.4em; border-radius: 6px; }
+.readme-body pre { background: #050816; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px 16px; overflow-x: auto; margin: 0.9em 0; }
+.readme-body pre code { background: none; padding: 0; font-size: 13px; line-height: 1.6; }
+.readme-body blockquote { border-left: 3px solid #804dee; padding-left: 1em; color: #aaa6c3; margin: 0.9em 0; }
+.readme-body hr { border: 0; border-top: 1px solid rgba(255,255,255,0.12); margin: 1.4em 0; }
+.readme-body .readme-table { overflow-x: auto; margin: 0.9em 0; }
+.readme-body table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.readme-body th, .readme-body td { border: 1px solid rgba(255,255,255,0.12); padding: 6px 10px; text-align: left; }
+.readme-body th { background: rgba(255,255,255,0.05); color: #fff; }
+.readme-body .readme-img { max-width: 100%; border-radius: 8px; margin: 0.6em 0; }

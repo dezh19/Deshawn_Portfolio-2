@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -7,6 +7,7 @@ import { github } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import ReadmeModal from "./ReadmeModal";
 
 const ProjectCard = ({
   index,
@@ -16,7 +17,14 @@ const ProjectCard = ({
   image,
   source_code_link,
   live_demo_link,
+  is_private,
+  readme,
 }) => {
+  const [readmeOpen, setReadmeOpen] = useState(false);
+  const showReadme = is_private && readme;
+  const openSource = () =>
+    showReadme ? setReadmeOpen(true) : window.open(source_code_link, "_blank");
+
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -43,17 +51,23 @@ const ProjectCard = ({
               </div>
             )}
             <div
-              onClick={() => window.open(source_code_link, "_blank")}
+              onClick={openSource}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-              title="Source code"
+              title={showReadme ? "View README (private repo)" : "Source code"}
             >
               <img
                 src={github}
-                alt="source code"
+                alt={showReadme ? "view README" : "source code"}
                 className="w-1/2 h-1/2 object-contain"
               />
             </div>
           </div>
+
+          {is_private && (
+            <span className="absolute top-3 left-3 px-2 py-1 rounded-full bg-black/70 text-white text-[11px] font-medium tracking-wide">
+              Private
+            </span>
+          )}
         </div>
 
         <div className="mt-5">
@@ -63,12 +77,35 @@ const ProjectCard = ({
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+            <p
+              key={tag.name}
+              className={`text-[14px] ${tag.color} ${showReadme ? "cursor-pointer hover:opacity-80" : ""}`}
+              onClick={showReadme ? () => setReadmeOpen(true) : undefined}
+              title={showReadme ? "View README" : undefined}
+            >
               #{tag.name}
             </p>
           ))}
         </div>
+
+        {showReadme && (
+          <button
+            onClick={() => setReadmeOpen(true)}
+            className="mt-4 text-[13px] text-secondary hover:text-white underline underline-offset-4"
+          >
+            Private repo — read the README
+          </button>
+        )}
       </Tilt>
+
+      {showReadme && (
+        <ReadmeModal
+          open={readmeOpen}
+          onClose={() => setReadmeOpen(false)}
+          title={name}
+          readme={readme}
+        />
+      )}
     </motion.div>
   );
 };
@@ -87,7 +124,7 @@ const Works = () => {
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           A few recent projects that reflect my work across frontend, backend, and design —
-          click the icons to view source or a live demo.
+          click the icons to view source or a live demo. Private projects open their README instead.
         </motion.p>
       </div>
 

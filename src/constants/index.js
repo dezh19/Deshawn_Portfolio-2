@@ -1,3 +1,9 @@
+// Private repos: their READMEs are bundled with the site so visitors can read them.
+import formSystemReadme from "../readmes/form-system.md?raw";
+import purchaseRequestReadme from "../readmes/hospital-purchase-request-app.md?raw";
+import ecommerenceImg from "../assets/ecommerence.jpg";
+import farmFlowImg from "../assets/farm-flow.jpg";
+
 import {
   web,
   fullstack,
@@ -249,6 +255,30 @@ const projects = [
     live_demo_link: "https://deshawnmitchell.github.io/Fuh-Deh-Food-App/",
   },
   {
+    name: "Forever E-Commerce Store",
+    description:
+      "A full-stack fashion store with a customer storefront, an admin panel for products and orders, and an Express + MongoDB API — with JWT auth, Cloudinary uploads, and Stripe, Razorpay or cash-on-delivery checkout.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "mongodb", color: "green-text-gradient" },
+      { name: "stripe", color: "pink-text-gradient" },
+    ],
+    image: ecommerenceImg,
+    source_code_link: "https://github.com/dezh19/Ecommerence",
+  },
+  {
+    name: "Farm Flow Mobile",
+    description:
+      "A farm-to-table produce delivery app for Guyana — marketplace with filters, reviews, promo codes, loyalty points, subscriptions and live order tracking, on a shared real-time Supabase backend.",
+    tags: [
+      { name: "react-native", color: "blue-text-gradient" },
+      { name: "expo", color: "green-text-gradient" },
+      { name: "supabase", color: "pink-text-gradient" },
+    ],
+    image: farmFlowImg,
+    source_code_link: "https://github.com/dezh19/farm-flow-mobile",
+  },
+  {
     name: "Smart Bin",
     description:
       "A smart waste management app aimed at making recycling and waste collection more seamless and efficient.",
@@ -270,6 +300,8 @@ const projects = [
     ],
     image: project4,
     source_code_link: "https://github.com/DeshawnMitchell/Form-System",
+    is_private: true,
+    readme: formSystemReadme,
   },
   {
     name: "Hospital Purchase Request App",
@@ -282,6 +314,8 @@ const projects = [
     ],
     image: project5,
     source_code_link: "https://github.com/DeshawnMitchell/Hospital-Purchase-Request-App-2",
+    is_private: true,
+    readme: purchaseRequestReadme,
   },
 ];
 
