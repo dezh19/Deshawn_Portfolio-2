@@ -162,7 +162,7 @@ const experiences = [
     company_name: "Linden Utility Services Co-op Society Ltd",
     icon: linden,
     iconBg: "#E6DEDD",
-    date: "December 2023 - Present",
+    date: "December 2023 - May 2025",
     points: [
       "Handled cash, credit, and check transactions with customers.",
       "Verified pricing and issued change, receipts, and refunds.",
@@ -186,7 +186,7 @@ const experiences = [
     company_name: "Linden Utility Services Co-op Society Ltd",
     icon: linden,
     iconBg: "#E6DEDD",
-    date: "September 2022 - Present",
+    date: "September 2022 - May 2025",
     points: [
       "Manage and maintain the organization's network infrastructure.",
       "Run help desk operations, resolving staff IT issues day to day.",
@@ -199,7 +199,7 @@ const experiences = [
     company_name: "Linden Utility Service Co-op Society Ltd",
     icon: linden,
     iconBg: "#383E56",
-    date: "December 2021 - Present · Contract",
+    date: "December 2021 - May 2025 · Contract",
     points: [
       "Manage and maintain computer networking infrastructure.",
       "Perform ongoing hardware maintenance and repairs.",
