@@ -3,6 +3,7 @@ import formSystemReadme from "../readmes/form-system.md?raw";
 import purchaseRequestReadme from "../readmes/hospital-purchase-request-app.md?raw";
 import ecommerenceImg from "../assets/ecommerence.jpg";
 import farmFlowImg from "../assets/farm-flow.jpg";
+import campusDeskImg from "../assets/campusdesk.jpg";
 
 import {
   web,
@@ -277,6 +278,18 @@ const projects = [
     ],
     image: farmFlowImg,
     live_demo_link: "https://farm-flow-gy.vercel.app/",
+  },
+  {
+    name: "CampusDesk",
+    description:
+      "A JavaFX desktop app for logging and tracking campus service requests — auto-computed priorities via swappable Strategy-pattern scoring, Observer-driven history timelines and live staff workload, plus CSV-exportable reports.",
+    tags: [
+      { name: "java", color: "blue-text-gradient" },
+      { name: "javafx", color: "green-text-gradient" },
+      { name: "design-patterns", color: "pink-text-gradient" },
+    ],
+    image: campusDeskImg,
+    source_code_link: "https://github.com/dezh19/CampusDesk",
   },
   {
     name: "Smart Bin",
